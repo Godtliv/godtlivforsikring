@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Beregn Pris</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/google-map.css">
+    <link rel="stylesheet" href="css/mailform.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.css">
+    <link rel="stylesheet" href="css/select2.css">
+    <link rel="stylesheet" href="css/popup.css">
+  </head>
+  <body>
+    <div class="page">
+      <!--
+      ========================================================
+      							HEADER
+      ========================================================
+      -->
+      <header>
+        <div class="container">
+          <div class="brand">
+            <div class="brand_name">
+              <a href="./main.html">
+                <img src="images/logo.svg" alt="logo">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="stuck_container" class="stuck_container">
+          <div class="container">
+            <nav class="nav">
+              <ul data-type="navbar" class="sf-menu">
+                <li><a href="main.html">Forside</a></li>
+                <li><a href="lønforsikring.html">Lønforsikring</a></li>
+                <li><a href="beregn-pris.html">Beregn Pris</a></li>
+                <li><a href="om-os.html">Om os</a></li>
+                <li><a href="kontakt-os.html">Kontakt os</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!--
+      ========================================================
+                                  CONTENT
+      ========================================================
+      -->
+      <main>
+
+
+        <section class="calculator">
+          <div class="page-title page-title-сalculator">
+            <div class="container">
+              <h2>Beregn <span>pris</span></h2>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="grid_3">
+                <div class="input-control">
+                  <p class="input-control-title">A-kasse</p>
+                  <select class="js-select-1" name="state1">
+                  </select>
+                </div>
+              </div>
+              <div class="grid_3">
+                <div class="input-control">
+                  <p class="input-control-title">Stilling</p>
+                  <select class="js-select-2" name="state2">
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid_3">
+                <div class="input-control">
+                  <p class="input-control-title">Alder </p>
+                  <select class="js-select-3" name="state3">
+                  </select>
+                </div>
+              </div>
+              <div class="grid_3">
+                <div class="input-control">
+                  <p class="input-control-title">Kommune</p>
+                  <select class="js-select-4" name="state4">
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="grid_6">
+                <div class="input-control js-insurance-type">
+                  <p class="input-control-title">Nuværende dækning (A-kasse)</p>
+                  <div class="input-control-radio">
+                    <label for="insurance_type3">
+                      <input type="radio" id="insurance_type3" name="insurance_type" value="Fuldtidsforsikret i A-kasse" checked/>Fuldtidsforsikret i A-kasse
+                      <span></span>
+                    </label>
+                  </div>
+                  <div class="input-control-radio">
+                    <label for="insurance_type2">
+                      <input type="radio" id="insurance_type2" name="insurance_type" value="Deltidsforsikret i A-kasse"  />Deltidsforsikret i A-kasse
+                      <span></span>
+                    </label>
+                  </div>
+                  <div class="input-control-radio">
+                    <label for="insurance_type1">
+                      <input type="radio" id="insurance_type1" name="insurance_type" value="ingen A-kasse"  />Ingen A-kasse
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="grid_6">
+                <div class="input-control input-control-start js-insurance-date">
+                  <p class="input-control-title">Dækningsperiode</p>
+                  <div class="input-control-radio">
+                    <label for="insurance_date1">
+                      <input type="radio" id="insurance_date1" name="insurance_date" checked value='6'/>6 måneder
+                      <span></span>
+                    </label>
+                  </div>
+                  <div class="input-control-radio">
+                    <label for="insurance_date2">
+                      <input type="radio" id="insurance_date2" name="insurance_date" value='12'/>12 måneder
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calculator-footer" data-lock='false'>
+            <div class="container">
+              <div class="calculator-footer-divided">
+                <div class="row">
+                  <div class="grid_6">
+                    <div class="input-control">
+                      <p class="input-control-title">Bruttoløn</p>
+                      <div class="input-control-range">
+                        <input type="text" class="js-range-slider1" name="my_range" value="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid_6">
+                    <div class="input-control">
+                      <p class="input-control-title">Dækning</p>
+                      <div class="input-control-range">
+                        <input type="text" class="js-range-slider2" name="my_range" value="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="grid_4">
+                  <div class="input-control input-control-center input-control-border">
+                    <p class="input-control-title">A-kasse udbetaling</p>
+                    <div class="input-control-total" id='js-calc-part-1'></div>
+                  </div>
+                </div>
+                <div class="grid_4">
+                  <div class="input-control input-control-center input-control-border">
+                    <p class="input-control-title">Lønsikring udbetaling</p>
+                    <div class="input-control-total" id='js-calc-part-2'></div>
+                  </div>
+                </div>
+                <div class="grid_4">
+                  <div class="input-control input-control-center">
+                    <p class="input-control-title">Total udbetaling</p>
+                    <div class="input-control-total" id='js-calc-total'>647</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="grid_6">
+                  <div class="input-control input-control-center">
+                    <p class="input-control-title">Pris pr. måned efter skat</p>
+                    <div class="input-control-total input-control-total--month" id='js-calc-per-month-taxes'></div>
+                  </div>
+                </div>
+                <div class="grid_6">
+                  <div class="input-control input-control-center">
+                    <p class="input-control-title">Pris pr. måned</p>
+                    <div class="input-control-total  input-control-center--out" id='js-calc-per-month'></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="calculator-btn-step">Få tilbud</button>
+
+          <div class="calculator-form">
+            <div class="container">
+              <form method="post" action="bat/rd-mailform.php" class="mailform off2">
+                <div class="calculator-form-title">
+                  Få et uforpligtende tilbud på lønforsikring?
+                </div>
+                <div class="customer-contact-success">
+                  <p class="customer-contact-success-text">
+                  Tak for din henvendelse vedr.<br> lønforsikring hos SikkertLiv. Vi kontakter dig inden for 48 timer i hverdage.
+                  </p>
+                </div>
+                <input type="hidden" name="form-type" value="contact">
+                <fieldset class="row">
+                  <label class="grid_4">
+                    <input type="text" name="name" placeholder="Navn:" data-constraints="@LettersOnly @NotEmpty">
+                  </label>
+                  <label class="grid_4">
+                    <input type="text" name="phone" placeholder="Telefon:" data-constraints="@Phone">
+                  </label>
+                  <label class="grid_4">
+                    <input type="text" name="email" placeholder="Email:" data-constraints="@Email @NotEmpty">
+                  </label>
+                </fieldset>
+                <fieldset class="row">
+                  <label class="grid_4">
+                    <input type="text" name="postnummer" placeholder="Postnummer :" data-constraints="@LettersOnly @NotEmpty">
+                  </label>
+                  <label class="grid_4">
+                    <input type="text" name="address" placeholder="Adresse:" data-constraints="@LettersOnly @NotEmpty">
+                  </label>
+                  <label class="grid_4">
+                    <input type="text" name="city" placeholder="By:" data-constraints="@LettersOnly @NotEmpty">
+                  </label>
+                </fieldset>
+                <fieldset class="row hidden">
+
+                  <label class="grid_12">
+                    <input type="text" name="A-kasse" id='email-1' value='Akademikernes A-kasse (AKA)'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Stilling" id='email-2' value='Abonnementsassistent'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Alder" id='email-3' value='18-24 år'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Kommune" id='email-4' value='Albertslund'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Dækningsperiode" id='email-5' value='Fuldtidsforsikret i A-kasse'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Nuværende dækning (A-kasse)" id='email-6' value='6 måneder'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Bruttoløn" id='email-7' value='12000'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Dækning" id='email-8' value='0'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="A-kasse udbetaling" id='email-9' value='18.666  kr'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Lønsikring udbetaling" id='email-10' value='For høj dækning'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Total udbetaling" id='email-11' value='17.173  kr'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Pris pr. måned efter skat" id='email-12' value='0 kr'>
+                  </label>
+                  <label class="grid_12">
+                    <input type="text" name="Pris pr. måned" id='email-13' value='0 kr'>
+                  </label>
+                </fieldset>
+
+                <fieldset class="row">
+
+                  <div class="mfControls grid_12">
+                    <button type="submit" class="btn" id="contact-submit">Indsend</button>
+                  </div>
+                </fieldset>
+              </form>
+
+            </div>
+          </div>
+
+        </section>
+      </main>
+      <!--
+      ========================================================
+                                  FOOTER
+      ========================================================
+      -->
+      <footer>
+        <section class="well3">
+          <div class="container">
+            <ul class="row contact-list">
+              <li class="grid_4">
+                <div class="box">
+                  <div class="box_aside">
+                    <div class="icon2 fa-map-marker"></div>
+                  </div>
+                  <div class="box_cnt__no-flow">
+                    <address>Jydeholmen 15,<br/> 2720 Vanløse</address>
+                  </div>
+                </div>
+
+              </li>
+              <li class="grid_4">
+                <div class="box">
+                  <div class="box_aside">
+                    <div class="icon2 fa-phone"></div>
+                  </div>
+                  <div class="box_cnt__no-flow"><a href="call:to">800-2345-6789</a></div>
+                </div>
+              </li>
+              <li class="grid_4">
+                <div class="box">
+                  <div class="box_aside">
+                    <div class="icon2 fa-envelope"></div>
+                  </div>
+                  <div class="box_cnt__no-flow"><a href="mailto:kontakt@sikkertliv-forsikring.dk">kontakt@sikkertliv-forsikring.dk</a></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <div class="footer-row">
+              <div class="copyright">Sikkertliv © 2019.&nbsp;&nbsp;<a href="index-5.html">Privacy Policy</a><!-- {%FOOTER_LINK} -->
+              </div>
+              <a href="https://sonerim.com">Created by Sonerim</a>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+
+    <div class="popupWrap">
+      <div class="popupContactUs">
+        <span class="popupContactUsClose">&#215;</span>
+        <div class="popupContactUsTitle">Vil du kontaktes vedr. lønforsikring?</div>
+        <form method="post" action="bat/rd-mailform.php" class="mailform off2">
+
+          <input type="hidden" name="form-type" value="contact">
+          <fieldset class="row">
+            <label class="grid_4">
+              <input type="text" name="name" placeholder="Navn:" data-constraints="@LettersOnly @NotEmpty">
+            </label>
+            <label class="grid_4">
+              <input type="text" name="phone" placeholder="Telefonnummer:" data-constraints="@Phone">
+            </label>
+            <label class="grid_4" style="display: none">
+              <input type="text" name="email" placeholder="Email:" >
+            </label>
+          </fieldset>
+
+          <fieldset class="row">
+            <div class="grid_12">
+              <button type="submit" class="btn popupContactUsSubmit" id="contact-submit">Indsend</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/ion.rangeSlider.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

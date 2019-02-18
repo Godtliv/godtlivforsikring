@@ -2852,7 +2852,7 @@ if($('section').is('.calculator')) {
 
     $(".js-range-slider1").ionRangeSlider({
         min: 12000,
-        max: 60000,
+        max: 100000,
         from: 0,
         to: 0,
         step: 500,
@@ -2862,7 +2862,7 @@ if($('section').is('.calculator')) {
 
     $(".js-range-slider2").ionRangeSlider({
         min: 0,
-        max: 10800,
+        max: 37500,
         from: 0,
         to: 500,
         step: 500,
@@ -2939,13 +2939,12 @@ if($('section').is('.calculator')) {
             salary = parseInt( salary.split(' ').join(''))
 
             let standardInsurancePayoff = getStandardPayoff(insurance_type);
-            //let maxPossibleCoverage = Math.ceil( (salary * 0.9 - standardInsurancePayoff)*1/1)
             let maxPossibleCoverage = Math.ceil( (salary * 0.9 - standardInsurancePayoff))
 
             my_range2.update({
                 min: 0,
-                max: maxPossibleCoverage,
-                from: maxPossibleCoverage,
+                max: '37500',
+                from: Math.round(maxPossibleCoverage / 500) * 500,
                 to: 500,
                 grid: true
             });
@@ -3128,7 +3127,7 @@ if($('section').is('.calculator')) {
 if(localStorage.getItem('popup') !== 'open'){
 
     setTimeout(function(){
-         //localStorage.setItem('popup', 'open');
+        localStorage.setItem('popup', 'open');
         $('.popupWrap').addClass('popupWrap--show')
 
         $('.popupWrap').on('click', function(){

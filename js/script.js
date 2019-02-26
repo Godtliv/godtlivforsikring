@@ -2714,7 +2714,6 @@ let profession_array = [
     {id: 'Øvrig', text: 'Øvrig', value: 1.2}
 ]
 
-
 let age_array = [
     {
         id: '18-24',
@@ -2739,7 +2738,6 @@ let age_array = [
 ]
 
 let kommune_array =  [
-
 
     {id: 'Albertslund', text: 'Albertslund', value: 0.607147147147147},
     {id: 'Allerød', text: 'Allerød', value: 0.556444444444445},
@@ -2855,17 +2853,17 @@ if($('section').is('.calculator')) {
         max: 100000,
         from: 0,
         to: 0,
-        step: 500,
+        step: 1000,
         grid: true,
     });
     let my_range1 = $(".js-range-slider1").data("ionRangeSlider");
 
     $(".js-range-slider2").ionRangeSlider({
         min: 0,
-        max: 37500,
+        max: 31000,
         from: 0,
         to: 500,
-        step: 500,
+        step: 1000,
         grid: true
     });
 
@@ -2943,7 +2941,7 @@ if($('section').is('.calculator')) {
 
             my_range2.update({
                 min: 0,
-                max: '37500',
+                max: '31000',
                 from: Math.round(maxPossibleCoverage / 500) * 500,
                 to: 500,
                 grid: true

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Spørgsmål</title>
+    <title>Anmeld skade</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/select2.css">
     <link rel="stylesheet" href="css/popup.css">
     <script src="js/jquery.js"></script>
-    <script src="js/jquery-migrate-1.2.1.js"></script>
   </head>
   <body>
     <div class="page">
@@ -52,79 +51,64 @@
       ========================================================
       -->
       <main>
-        <section class="mobile-center">
-          <div class="page-title page-title-services">
+        <section class="customer customer-contact">
+          <div class="page-title page-title-customer">
             <div class="container">
-              <h2>Spørgsmål</h2>
+              <h2>Anmeld skade</h2>
             </div>
+
           </div>
+
           <div class="container">
-            <div class="row">
-              <div class="sup-page">
-                <ul class="sup-page-list">
-                  <li>
-                    <span>Hvad skal jeg minimum tjene for at blive dækket?</span>
-                    <p>Du skal minimum have en månedsløn på 25.000 kr. om måneden, for at kunne tegne denne forsikring.</p>
-                  </li>
-                  <li>
-                    <span>Hvornår gælder min forsikring fra?</span>
-                    <p>Du har 12 måneders kvalifikationsperiode. Efter 12 måneder er du dækket.</p>
-                  </li>
-                  <li>
-                    <span>Skal jeg være medlem af en A-Kasse?</span>
-                    <p>Ja. Medlemskab af en A-Kasse er en forudsætning for at tegne en lønsikring hos SikkertLiv.</p>
-                  </li>
-                  <li>
-                    <span>Hvis jeg bliver arbejdsløs, hvem skal jeg så kontakte?</span>
-                    <p>Du skal enten udfylde kontaktformularen på dette website eller ringe til os på telefonnummer:  71 99 38 38</p>
-                  </li>
-                  <li>
-                    <span>Skal jeg informere jer, hvis jeg f.eks. skifter A-Kasse eller der sker ændringer i mit lønniveau?</span>
-                    <p>Ja. Alle signifikante ændringer af dit arbejdsforhold, f.eks. lønændring, ændring af arbejdsfunktion eller ændring af A-Kasse, skal vi informeres om, så vi kan tilpasse din pris.</p>
-                  </li>
-                  <li>
-                    <span>Jeg er blevet kontaktet af jer telefonisk, og ønsker ikke at blive kontaktet igen. Hvad gør jeg?</span>
-                    <p>Skriv venligst dit navn og telefonnummer til <a href="#">kontakt@sikkertliv-forsikring.dk</a>, samt at du ikke ønsker yderligere kontakt. Så vil vi hurtigst muligt fjerne dig fra vore opkaldslister.</p>
-                  </li>
-                  <li>
-                    <span>Jeg er blevet kontaktet af jer, men har aldrig givet kontakttilladelse?</span>
-                    <p>I Danmark er forsikringssalg undtaget af dørsalgsloven. Der kræves derfor ikke specifik kontakttilladelse. Vi respekterer dog, hvis du ikke ønsker at få yderligere opkald fra os. Send os derfor en mail på  <a href="#">kontakt@sikkertliv-forsikring.dk</a></p>
-                  </li>
-                  <li>
-                    <span>Jeg er registreret i RKI. Kan jeg blive kunde?</span>
-                    <p>Nej desværre. Vi tager ikke imod kunder, der er RKI registreret.</p>
-                  </li>
-                  <li>
-                    <span>Hvis jeg bliver arbejdsløs, hvornår får jeg så første betaling?</span>
-                    <p>Du skal straks informere os, såfremt du er blevet arbejdsløs. Såfremt det vurderes, at du er berettiget til betaling, vil der være 30 dages karens fra du er blevet arbejdsløs til at første betaling vil finde sted.</p>
-                  </li>
+            <p class="sup-page-text">Hvis du er blevet ramt af arbejdsløshed, skal du venligst straks informere os. Dette gør du på nedenstående kontaktformular, eller på telefon: 71 99 38 38</p>
+            <div class="customer-list-title">Vælg emne:</div>
 
 
-                  <li>
-                    <span>Dækker Lønsikring, hvis jeg selv siger op?</span>
-                    <p>Nej. Lønsikring dækker hvis du bliver ufrivilligt arbejdsløs.  Du kan dog ikke betragtes som ufrivilligt arbejdsløs, hvis du selv opsiger din stilling, eller du bliver ledig fra en ansættelse som ikke opfylder  definitionen ”beskæftiget som lønmodtager”. </p>
-                  </li>
-                  <li>
-                    <span>Jeg har allerede lønsikring i et andet selskab - kan jeg flytte den over til Jer?</span>
-                    <p>Ja. Ved overførsel af anciennitet fra lignende lønsikring gælder der en kvalifikationsperiode på 3 måneder og regnes fra forsikrings ikrafttrædelsesdato.</p>
-                  </li>
-                  <li>
-                    <span>Kan jeg trække præmien til Lønsikring fra i skat?</span>
-                    <p>Ja. Præmien for arbejdsløshedsforsikring er fradragsberettiget efter gældende skattelovgivning.  SikkertLiv indberetter indbetalte præmier til SKAT.</p>
-                  </li>
-                  <li>
-                    <span>Kan jeg fortryde købet eller opsige min forsikring?  </span>
-                    <p>Ja. Hvis du køber en forsikring hos SikkertLiv, kan du fortryde købet af forsikringen i indtil 14 dage, efter forsikringen er trådt i kraft. Du kan opsige forsikringen skriftligt til SikkertLiv med 30 dages varsel til udløb af en kalendermåned. </p>
-                  </li>
-
-
-                </ul>
-              </div>
-            </div>
           </div>
+        </section>
+         <section class="customer-contact">
+          <div class="container">
+            <form method="post" action="bat/rd-mailform.php" class="mailform off2">
+              <div class="customer-contact-success">
+                <p class="customer-contact-success-text">
+                Tak for din e-mail.<br> Vi vil bestræbe os på at kontakte dig inden for 48 timer i hverdagene.
+                </p>
+                <div class="customer-contact-success-wish">God dag.</div>
+                <div class="customer-contact-success-footer">Sikkert <span>Liv</span> Forsikringsagentur.</div>
+
+              </div>
+              <input type="hidden" name="form-type" value="contact">
+              <input type="hidden" id="deparment" type="text" name="afdelideparmentng"  value="6">
+              <fieldset class="row">
+                <label class="grid_4">
+                  <input type="text" name="name" placeholder="Navn:" data-constraints="@LettersOnly @NotEmpty">
+                </label>
+                <label class="grid_4">
+                  <input type="text" name="phone" placeholder="Telefonnummer:" data-constraints="@Phone">
+                </label>
+                <label class="grid_4">
+                  <input type="text" name="email" placeholder="Email:" data-constraints="@Email @NotEmpty">
+                </label>
+              </fieldset>
+              <fieldset class="row">
+                <label class="grid_4">
+                  <input type="text" name="adresse" placeholder="Adresse:" data-constraints="@LettersOnly @NotEmpty">
+                </label>
+                <label class="grid_8">
+                  <textarea name="besked" placeholder="Besked:" data-constraints="@NotEmpty"></textarea>
+                </label>
+
+              </fieldset>
 
 
+              <fieldset class="row">
 
+                <div class="mfControls grid_12">
+                  <button type="submit" class="btn" id="contact-submit">Indsend</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
         </section>
       </main>
       <!--
@@ -206,7 +190,6 @@
         </form>
       </div>
     </div>
-
 
     <script src="js/jquery.js"></script>
     <script src="js/jquery.magnific-popup.js"></script>

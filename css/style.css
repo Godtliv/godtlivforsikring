@@ -2520,3 +2520,39 @@ footer address {
 .customer-list:focus {
   outline: none;
 }
+
+.page-img-square {
+
+  display: block;
+  text-align: center;
+}
+
+.page-img-square img {
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 4px;
+  display: inline-block;
+  width: 170px;
+  height: 170px;
+  box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+}
+
+.download {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: all lienar 0.2s;
+}
+
+.download:hover {
+  box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+}
+
+footer a {
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #62bfe6;
+}

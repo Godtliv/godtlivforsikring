@@ -8,6 +8,7 @@ $addresses = [
     ['ks@sikkertliv-forsikring.dk' => '3'],
     ['ks@sikkertliv-forsikring.dk' => '4'],
     ['ks@sikkertliv-forsikring.dk' => '5']
+    ['ks@sikkertliv-forsikring.dk' => '6']
 ];
 //$recipients = '#';
 //

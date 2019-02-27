@@ -2479,7 +2479,6 @@ ul.accordionContentList {
 .sup-page-img {
   height: 140px;
   margin: 0 auto;
-  margin-bottom: 30px;
   display: block;
 }
 
@@ -2523,23 +2522,50 @@ footer address {
 
 .page-img-square {
 
-  display: block;
+  display: inline-block;
   text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-img-square:before,
+.page-img-square:after {
+  content: '';
+  display: block;
+  width: 110px;
+  height: 110px;
+  background-color: transparent;
+  position: absolute;
+}
+
+.page-img-square:before {
+  top: -5px;
+  left: -5px;
+  border-top-left-radius: 4px;
+  border-left: 2px solid #62bfe6;
+  border-top: 2px solid #62bfe6;
+}
+
+.page-img-square:after {
+  bottom: -5px;
+  right: -5px;
+  border-bottom-right-radius: 4px;
+  border-right: 2px solid #62bfe6;
+  border-bottom: 2px solid #62bfe6;
 }
 
 .page-img-square img {
-  border: 1px solid #ccc;
-  padding: 30px;
+  padding: 20px;
   border-radius: 4px;
   display: inline-block;
-  width: 170px;
-  height: 170px;
-  box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+  width: 100px;
+  height: 100px;
 }
 
 .download {
   border: 1px solid #ccc;
-  padding: 5px;
   border-radius: 4px;
   display: inline-block;
   transition: all lienar 0.2s;
@@ -2547,6 +2573,13 @@ footer address {
 
 .download:hover {
   box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+}
+
+.download a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
 }
 
 footer a {

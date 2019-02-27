@@ -2839,32 +2839,43 @@ let kommune_array =  [
     {id: 'Århus', text: 'Århus', value: 0.537777777777778},
 ]
 
-
 $('.customer-list').on('change', function(){
     let selectValue = $('.customer-list option:selected').attr('data-value');
     $('#deparment').val(selectValue)
 })
 
 
+
+
 if($('section').is('.calculator')) {
 
+    let currentRangeSlider = '1'
+
     $(".js-range-slider1").ionRangeSlider({
-        min: 12000,
+        min: 25000,
         max: 100000,
         from: 0,
         to: 0,
         step: 1000,
         grid: true,
+        onChange: function () {
+            currentRangeSlider = '1'
+            console.log('currentRangeSlider1',currentRangeSlider)
+        }
     });
     let my_range1 = $(".js-range-slider1").data("ionRangeSlider");
 
     $(".js-range-slider2").ionRangeSlider({
-        min: 0,
+        min: 4000,
         max: 31000,
         from: 0,
         to: 500,
         step: 1000,
-        grid: true
+        grid: true,
+        onChange: function () {
+            currentRangeSlider = '2'
+            console.log('currentRangeSlider1',currentRangeSlider)
+        }
     });
 
     let my_range2 = $(".js-range-slider2").data("ionRangeSlider");
@@ -2939,19 +2950,29 @@ if($('section').is('.calculator')) {
             let standardInsurancePayoff = getStandardPayoff(insurance_type);
             let maxPossibleCoverage = Math.ceil( (salary * 0.9 - standardInsurancePayoff))
 
-            my_range2.update({
-                min: 0,
-                max: '31000',
-                from: Math.round(maxPossibleCoverage / 500) * 500,
-                to: 500,
-                grid: true
-            });
+            if(currentRangeSlider === '1') {
+                my_range2.update({
+                    min: 4000,
+                    max: '31000',
+                    from: Math.round(maxPossibleCoverage / 500) * 500,
+                    to: 500,
+                    grid: true,
+                })
+            }
+
             mainCalc(insurance_company,profession,age,kommune,period,insurance_type,salary,chosen_coverage)
         })
 
         $('.js-range-slider2').on('change', function() {
             chosen_coverage= $(".js-range-slider2").data("ionRangeSlider").result.from_pretty;
             chosen_coverage = parseInt( chosen_coverage.split(' ').join(''))
+            let standardInsurancePayoff = getStandardPayoff(insurance_type);
+
+            if(currentRangeSlider === '2') {
+                my_range1.update({
+                    from: Math.ceil( chosen_coverage / 0.9 + standardInsurancePayoff ),
+                });
+            }
 
             mainCalc(insurance_company,profession,age,kommune,period,insurance_type,salary,chosen_coverage)
         })
@@ -3130,7 +3151,6 @@ if(localStorage.getItem('popup') !== 'open'){
 
         $('.popupWrap').on('click', function(){
             let target = event.target
-            console.log('target',target)
             if($(target).hasClass('popupWrap') || $(target).hasClass('popupContactUsClose')) {
                 $('.popupWrap').removeClass('popupWrap--show')
             }

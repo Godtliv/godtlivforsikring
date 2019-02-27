@@ -2851,6 +2851,8 @@ if($('section').is('.calculator')) {
 
     let currentRangeSlider = '1'
 
+
+
     $(".js-range-slider1").ionRangeSlider({
         min: 25000,
         max: 100000,
@@ -2858,10 +2860,8 @@ if($('section').is('.calculator')) {
         to: 0,
         step: 1000,
         grid: true,
-        onChange: function () {
-            currentRangeSlider = '1'
-            console.log('currentRangeSlider1',currentRangeSlider)
-        }
+
+
     });
     let my_range1 = $(".js-range-slider1").data("ionRangeSlider");
 
@@ -2872,10 +2872,8 @@ if($('section').is('.calculator')) {
         to: 500,
         step: 1000,
         grid: true,
-        onChange: function () {
-            currentRangeSlider = '2'
-            console.log('currentRangeSlider1',currentRangeSlider)
-        }
+
+
     });
 
     let my_range2 = $(".js-range-slider2").data("ionRangeSlider");
@@ -2943,12 +2941,15 @@ if($('section').is('.calculator')) {
             mainCalc(insurance_company,profession,age,kommune,period,insurance_type,salary,chosen_coverage)
         })
 
-        $('.js-range-slider1').on('change', function() {
+        $('.js-range-slider1').on('change',  function() {
+            let test = $(this)
+
             salary= $(".js-range-slider1").data("ionRangeSlider").result.from_pretty;
             salary = parseInt( salary.split(' ').join(''))
 
             let standardInsurancePayoff = getStandardPayoff(insurance_type);
             let maxPossibleCoverage = Math.ceil( (salary * 0.9 - standardInsurancePayoff))
+
 
             if(currentRangeSlider === '1') {
                 my_range2.update({
@@ -2960,8 +2961,11 @@ if($('section').is('.calculator')) {
                 })
             }
 
+            currentRangeSlider = '1'
+
             mainCalc(insurance_company,profession,age,kommune,period,insurance_type,salary,chosen_coverage)
         })
+
 
         $('.js-range-slider2').on('change', function() {
             chosen_coverage= $(".js-range-slider2").data("ionRangeSlider").result.from_pretty;
@@ -2973,6 +2977,8 @@ if($('section').is('.calculator')) {
                     from: Math.ceil( chosen_coverage / 0.9 + standardInsurancePayoff ),
                 });
             }
+
+            currentRangeSlider = '2'
 
             mainCalc(insurance_company,profession,age,kommune,period,insurance_type,salary,chosen_coverage)
         })

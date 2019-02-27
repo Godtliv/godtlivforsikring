@@ -2974,7 +2974,7 @@ if($('section').is('.calculator')) {
 
             if(currentRangeSlider === '2') {
                 my_range1.update({
-                    from: Math.ceil( chosen_coverage / 0.9 + standardInsurancePayoff ),
+                    from:  Math.round( Math.ceil( chosen_coverage / 0.9 + standardInsurancePayoff )  / 1000) * 1000,
                 });
             }
 

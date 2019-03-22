@@ -2589,3 +2589,16 @@ footer a {
 footer a:hover {
   color: #62bfe6;
 }
+
+.download-wrap {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+}
+
+.download-wrap .download {
+  margin: 0 15px;
+}

@@ -2854,7 +2854,7 @@ if($('section').is('.calculator')) {
 
 
     $(".js-range-slider1").ionRangeSlider({
-        min: 25000,
+        min: 27000,
         max: 100000,
         from: 0,
         to: 0,
@@ -2866,7 +2866,7 @@ if($('section').is('.calculator')) {
     let my_range1 = $(".js-range-slider1").data("ionRangeSlider");
 
     $(".js-range-slider2").ionRangeSlider({
-        min: 4000,
+        min: 3500,
         max: 31000,
         from: 0,
         to: 500,
@@ -2953,7 +2953,7 @@ if($('section').is('.calculator')) {
 
             if(currentRangeSlider === '1') {
                 my_range2.update({
-                    min: 4000,
+                    min: 3500,
                     max: '31000',
                     from: Math.round(maxPossibleCoverage / 500) * 500,
                     to: 500,

@@ -2954,8 +2954,9 @@ if($('section').is('.calculator')) {
             if(currentRangeSlider === '1') {
                 my_range2.update({
                     min: 3500,
-                    max: '31000',
-                    from: Math.round(maxPossibleCoverage / 500) * 500,
+                    //max: '31000',
+                    //from: Math.round(maxPossibleCoverage / 500) * 500,
+                    max: Math.round(maxPossibleCoverage / 500) * 500,
                     to: 500,
                     grid: true,
                 })
@@ -2985,7 +2986,7 @@ if($('section').is('.calculator')) {
 
         function getStandardPayoff (insurance_type) {
             if (insurance_type === "Fuldtidsforsikret i A-kasse") {
-                return 18666;
+                return 18866;
             } else if (insurance_type === "Deltidsforsikret i A-kasse") {
                 return 12577;
 
@@ -3110,12 +3111,16 @@ if($('section').is('.calculator')) {
 
             $('#email-9').val(standardInsurancePayoff.toFixed(0).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
 
+            console.log('QQQ', Math.round(+companyInsurancePayoff.toFixed(0) / 500) * 500, )
 
+
+            let test = ''+Math.round(+companyInsurancePayoff.toFixed(0) / 500) * 500
+            console.log('WWW', ''+test)
             $('#js-calc-per-month').text(pricePerMonth.toFixed(0).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
             $('#js-calc-per-month-taxes').text(pricePerMonthAfterTaxes.toFixed(0).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
             if(Math.sign(companyInsurancePayoff) !== -1){
                 $('#email-10').val(companyInsurancePayoff.toFixed(0).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
-                $('#js-calc-part-2').text(companyInsurancePayoff.toFixed(0).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
+                $('#js-calc-part-2').text(  ''+(test).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
             }
             else {
                 $('#email-10').val('For høj dækning')

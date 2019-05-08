@@ -2973,11 +2973,11 @@ if($('section').is('.calculator')) {
             chosen_coverage = parseInt( chosen_coverage.split(' ').join(''))
             let standardInsurancePayoff = getStandardPayoff(insurance_type);
 
-            if(currentRangeSlider === '2') {
-                my_range1.update({
-                    from:  Math.round( Math.ceil( chosen_coverage / 0.9 + standardInsurancePayoff )  / 1000) * 1000,
-                });
-            }
+            // if(currentRangeSlider === '2') {
+            //     my_range1.update({
+            //         from:  Math.round( Math.ceil( chosen_coverage / 0.9 + standardInsurancePayoff )  / 1000) * 1000,
+            //     });
+            // }
 
             currentRangeSlider = '2'
 

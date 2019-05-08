@@ -3095,8 +3095,13 @@ if($('section').is('.calculator')) {
             let pricePerMonthAfterTaxes;
 
             standardInsurancePayoff = getStandardPayoff(insurance_type);
-            companyInsurancePayoff = ((standardInsurancePayoff + chosen_coverage) * 0.92) - standardInsurancePayoff;
+
+            companyInsurancePayoff =   Math.round(   (((standardInsurancePayoff + chosen_coverage) * 0.92) - standardInsurancePayoff   )/ 500)* 500;
+
             totalPayoff = standardInsurancePayoff + companyInsurancePayoff;
+            console.log('VVVVVV',standardInsurancePayoff)
+            console.log('WQQQQQQ',companyInsurancePayoff)
+            console.log('GFFGFFG',totalPayoff)
 
             pricePerMonth = calculatePrice(chosen_coverage, period, insurance_company, age, kommune, profession);
 

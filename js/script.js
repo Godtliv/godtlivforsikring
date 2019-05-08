@@ -2950,7 +2950,6 @@ if($('section').is('.calculator')) {
             let standardInsurancePayoff = getStandardPayoff(insurance_type);
             let maxPossibleCoverage = Math.ceil( (salary * 0.9 - standardInsurancePayoff))
 
-
             if(currentRangeSlider === '1') {
                 my_range2.update({
                     min: 3500,
@@ -3063,7 +3062,6 @@ if($('section').is('.calculator')) {
 
         function calculatePrice(chosen_coverage, period, insurance_company, age, kommune, profession) {
 
-
             $('#email-8').val(chosen_coverage)
             $('#email-5').val(period)
             $('#email-1').val(insurance_company)
@@ -3111,16 +3109,13 @@ if($('section').is('.calculator')) {
 
             $('#email-9').val(standardInsurancePayoff.toFixed(0).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
 
-            console.log('QQQ', Math.round(+companyInsurancePayoff.toFixed(0) / 500) * 500, )
+            let payOff = ''+Math.round(+companyInsurancePayoff.toFixed(0) / 500) * 500
 
-
-            let test = ''+Math.round(+companyInsurancePayoff.toFixed(0) / 500) * 500
-            console.log('WWW', ''+test)
             $('#js-calc-per-month').text(pricePerMonth.toFixed(0).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
             $('#js-calc-per-month-taxes').text(pricePerMonthAfterTaxes.toFixed(0).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
             if(Math.sign(companyInsurancePayoff) !== -1){
                 $('#email-10').val(companyInsurancePayoff.toFixed(0).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
-                $('#js-calc-part-2').text(  ''+(test).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
+                $('#js-calc-part-2').text(  ''+(payOff).replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1.$2 $3') + ' kr')
             }
             else {
                 $('#email-10').val('For høj dækning')
